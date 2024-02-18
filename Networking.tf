@@ -106,12 +106,21 @@ resource "aws_route_table_association" "IGW" {
   route_table_id = aws_route_table.Mohsin-Pub-RT.id
 }
 
-resource "aws_db_subnet_group" "my_db_subnet_group" {
+resource "aws_db_subnet_group" "my_Pub_db_subnet_group" {
   name = "my-db-subnet-group"
   subnet_ids = [aws_subnet.Pub-sub1.id, aws_subnet.Pub-sub2.id]
 
   tags = {
-    Name = "My DB Subnet Group"
+    Name = "My DB Subnet Public Group"
+  }
+}
+
+resource "aws_db_subnet_group" "my_PVT_db_subnet_group" {
+  name = "my-db-subnet-group"
+  subnet_ids = [aws_subnet.Pvt-Sub1.id, aws_subnet.Pvt-Sub2.id]
+
+  tags = {
+    Name = "My DB Subnet Private Group"
   }
 }
 
