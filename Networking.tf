@@ -17,7 +17,7 @@ resource "aws_subnet" "Pvt-Sub1" {
     Name = "Pvt-sub1"
   }
 }
-
+  
 resource "aws_subnet" "Pub-sub2" {
   vpc_id            = aws_vpc.Mohsin-VPC.id
   cidr_block        = var.public_subnet2_cidr
